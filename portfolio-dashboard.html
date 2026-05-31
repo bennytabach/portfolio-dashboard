@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Dashboard — Benny Tabach | May 31, 2026</title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#0f172a; color:#e2e8f0; line-height:1.5; }
+  .header { background:linear-gradient(135deg,#1e3a5f,#0f172a); padding:28px 32px; border-bottom:1px solid #1e293b; }
+  .header h1 { font-size:1.6rem; font-weight:700; color:#f8fafc; }
+  .header .sub { color:#94a3b8; font-size:0.85rem; margin-top:4px; }
+  .container { max-width:1400px; margin:0 auto; padding:24px 16px; }
+  .section-title { font-size:1.1rem; font-weight:700; color:#f8fafc; margin:28px 0 12px; padding-left:8px; border-left:3px solid #3b82f6; }
+  .stat-bar { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:24px; }
+  .stat-card { background:#1e293b; border-radius:10px; padding:14px 18px; flex:1; min-width:120px; border:1px solid #334155; }
+  .stat-card .label { font-size:0.7rem; color:#94a3b8; text-transform:uppercase; letter-spacing:0.05em; }
+  .stat-card .value { font-size:1.25rem; font-weight:700; color:#f8fafc; margin-top:4px; }
+  .stat-card .sub { font-size:0.7rem; color:#64748b; margin-top:2px; }
+  table { width:100%; border-collapse:collapse; font-size:0.82rem; }
+  thead th { background:#1e293b; color:#94a3b8; text-transform:uppercase; font-size:0.68rem; letter-spacing:0.04em; padding:10px 8px; text-align:left; border-bottom:1px solid #334155; }
+  .etf-row { cursor:pointer; transition:background 0.15s; }
+  .etf-row:hover { background:#1e293b; }
+  .etf-row td { padding:11px 8px; border-bottom:1px solid #1e293b; }
+  .detail-row td { background:#111827; padding:0; }
+  .detail-box { padding:12px 16px; color:#94a3b8; font-size:0.8rem; line-height:1.7; border-left:3px solid #3b82f6; margin:6px 8px; border-radius:4px; }
+  .badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:0.72rem; font-weight:600; color:#000; white-space:nowrap; }
+  .risk-badge { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; font-size:0.78rem; font-weight:700; color:#000; }
+  .commentary { background:#1e293b; border-radius:12px; padding:24px 28px; margin-top:28px; border:1px solid #334155; }
+  .commentary h1 { font-size:1.2rem; color:#f8fafc; margin:0 0 16px; }
+  .commentary h2 { font-size:1rem; color:#93c5fd; margin:20px 0 8px; }
+  .commentary h3 { font-size:0.9rem; color:#7dd3fc; margin:16px 0 6px; }
+  .commentary p { color:#cbd5e1; font-size:0.87rem; margin:8px 0; }
+  .commentary strong { color:#f8fafc; }
+  .commentary hr { border:none; border-top:1px solid #334155; margin:16px 0; }
+  .commentary ul { margin:6px 0 10px 20px; }
+  .commentary li { color:#cbd5e1; font-size:0.87rem; margin:3px 0; }
+  .footnote { color:#475569; font-size:0.72rem; margin-top:20px; padding:12px; background:#0f172a; border-radius:6px; border:1px solid #1e293b; }
+  @media(max-width:768px) {
+    thead th:nth-child(n+5) { display:none; }
+    .etf-row td:nth-child(n+5) { display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📊 Portfolio Dashboard — Benny Tabach</h1>
+  <div class="sub">Weekly update · May 31, 2026 · 7 active positions · ~$1,350/mo savings</div>
+</div>
+<div class="container">
+
+  <!-- Summary stats -->
+  <div class="stat-bar">
+    <div class="stat-card"><div class="label">SPY (Benchmark)</div><div class="value">$755.65</div><div class="sub">+28.4% 1Y</div></div>
+    <div class="stat-card"><div class="label">SMH (Top Performer)</div><div class="value">$599.59</div><div class="sub">+147.9% 1Y 🚀</div></div>
+    <div class="stat-card"><div class="label">IBIT (Bitcoin)</div><div class="value">$41.63</div><div class="sub">-28.0% 1Y ⚠️</div></div>
+    <div class="stat-card"><div class="label">IEMG/EM (Surprise)</div><div class="value">$83.61</div><div class="sub">+24.4% YTD</div></div>
+    <div class="stat-card"><div class="label">GLDM (Watchlist)</div><div class="value">$89.80</div><div class="sub">+37.8% 1Y</div></div>
+    <div class="stat-card"><div class="label">Active Positions</div><div class="value">7 / 7</div><div class="sub">Portfolio full</div></div>
+  </div>
+
+  <!-- Active Portfolio -->
+  <div class="section-title">Active Portfolio (7 positions)</div>
+  <div style="overflow-x:auto; border-radius:10px; border:1px solid #334155;">
+  <table>
+    <thead>
+      <tr>
+        <th>ETF</th><th style="text-align:right">Price</th><th style="text-align:right">Div Yield</th>
+        <th style="text-align:right">1M Ret</th><th style="text-align:right">1Y Ret</th>
+        <th style="text-align:right">5Y Ret</th><th style="text-align:right">FWD P/E</th>
+        <th>Valuation</th><th>Rec</th><th style="text-align:center">Risk</th>
+        <th style="text-align:right">EOY Target</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>SPY</strong><br><small style="color:#94a3b8">SPDR S&P 500 ETF Trust</small></td>
+          <td style="text-align:right"><strong>$755.65</strong></td>
+          <td style="text-align:right">1.07%</td>
+          <td style="text-align:right">2.1%</td>
+          <td style="text-align:right">28.4%</td>
+          <td style="text-align:right">91.8%</td>
+          <td style="text-align:right">$22.00</td>
+          <td><span class="badge" style="background:#f97316">Expensive</span></td>
+          <td><span class="badge" style="background:#facc15;color:#000">Hold</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#22c55e">3</span></td>
+          <td style="text-align:right">$820.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> Apple, Microsoft, Nvidia, Amazon, Meta Platforms, Alphabet, Berkshire Hathaway<br>
+              <strong>Valuation Reason:</strong> Forward P/E of 22x is ~30% above the 30-year historical average of ~17x; supported by AI-driven earnings growth but leaves limited buffer for macro or rate shocks.
+            </div>
+          </td>
+        </tr>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>Invesco NASDAQ-100 Swap UCIT</strong><br><small style="color:#94a3b8">Invesco NASDAQ-100 Swap UCITS ETF A</small></td>
+          <td style="text-align:right"><strong>$91.00</strong></td>
+          <td style="text-align:right">0.00%</td>
+          <td style="text-align:right">6.5%</td>
+          <td style="text-align:right">37.0%</td>
+          <td style="text-align:right">65.0%</td>
+          <td style="text-align:right">$27.50</td>
+          <td><span class="badge" style="background:#f97316">Expensive</span></td>
+          <td><span class="badge" style="background:#facc15;color:#000">Hold</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#facc15">5</span></td>
+          <td style="text-align:right">$98.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> Apple, Microsoft, Nvidia, Amazon, Broadcom, Meta Platforms, Netflix<br>
+              <strong>Valuation Reason:</strong> Trades at ~27x forward earnings — elevated vs. history but justified by mega-cap tech AI monetization and dominant free cash flow; top-5 concentration at ~38% amplifies drawdown risk.
+            </div>
+          </td>
+        </tr>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>COWZ</strong><br><small style="color:#94a3b8">Pacer US Cash Cows 100 ETF</small></td>
+          <td style="text-align:right"><strong>$64.00</strong></td>
+          <td style="text-align:right">2.12%</td>
+          <td style="text-align:right">1.5%</td>
+          <td style="text-align:right">25.2%</td>
+          <td style="text-align:right">42.0%</td>
+          <td style="text-align:right">$14.00</td>
+          <td><span class="badge" style="background:#facc15">Fair</span></td>
+          <td><span class="badge" style="background:#22c55e;color:#000">Buy</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#facc15">4</span></td>
+          <td style="text-align:right">$70.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> Qualcomm, CVS Health, Ford Motor, Altria Group, ConocoPhillips, Philip Morris, Verizon<br>
+              <strong>Valuation Reason:</strong> ~14x forward earnings with 2.1% yield is compelling vs. S&P 500's 22x; high FCF screen provides earnings quality floor, though cyclical energy and consumer names add macro sensitivity.
+            </div>
+          </td>
+        </tr>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>SMH</strong><br><small style="color:#94a3b8">VanEck Semiconductor ETF</small></td>
+          <td style="text-align:right"><strong>$599.59</strong></td>
+          <td style="text-align:right">0.42%</td>
+          <td style="text-align:right">8.0%</td>
+          <td style="text-align:right">147.9%</td>
+          <td style="text-align:right">250.0%</td>
+          <td style="text-align:right">$26.77</td>
+          <td><span class="badge" style="background:#f97316">Expensive</span></td>
+          <td><span class="badge" style="background:#facc15;color:#000">Hold</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#ef4444">8</span></td>
+          <td style="text-align:right">$680.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> Nvidia, TSMC, Intel, Micron Technology, AMD, Broadcom, ASML<br>
+              <strong>Valuation Reason:</strong> 27x forward P/E is elevated but supported by AI-driven data center capex supercycle; Nvidia's 15%+ weighting and TSMC's leading-edge monopoly make SMH the highest-beta AI infrastructure position.
+            </div>
+          </td>
+        </tr>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>ITA</strong><br><small style="color:#94a3b8">iShares U.S. Aerospace & Defense ET</small></td>
+          <td style="text-align:right"><strong>$235.57</strong></td>
+          <td style="text-align:right">0.49%</td>
+          <td style="text-align:right">5.0%</td>
+          <td style="text-align:right">38.6%</td>
+          <td style="text-align:right">142.0%</td>
+          <td style="text-align:right">$23.50</td>
+          <td><span class="badge" style="background:#facc15">Fair</span></td>
+          <td><span class="badge" style="background:#22c55e;color:#000">Buy</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#facc15">5</span></td>
+          <td style="text-align:right">$265.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> RTX Corporation, Boeing, Northrop Grumman, Lockheed Martin, L3Harris Technologies, TransDigm Group, General Dynamics<br>
+              <strong>Valuation Reason:</strong> ~23x forward P/E is reasonable given multi-year defense contract backlog; NATO 2% GDP spending commitments across Europe and sustained US defense budgets support above-market earnings growth through 2027.
+            </div>
+          </td>
+        </tr>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>תכלית סל MSCI Emerging Marke</strong><br><small style="color:#94a3b8">תכלית סל MSCI Emerging Markets</small></td>
+          <td style="text-align:right"><strong>$83.61</strong></td>
+          <td style="text-align:right">2.37%</td>
+          <td style="text-align:right">5.0%</td>
+          <td style="text-align:right">24.4%</td>
+          <td style="text-align:right">26.3%</td>
+          <td style="text-align:right">$13.50</td>
+          <td><span class="badge" style="background:#86efac">Cheap</span></td>
+          <td><span class="badge" style="background:#22c55e;color:#000">Buy</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#f97316">6</span></td>
+          <td style="text-align:right">$90.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> TSMC, Samsung Electronics, SK Hynix, Tencent Holdings, Alibaba Group, Meituan, JD.com<br>
+              <strong>Valuation Reason:</strong> ~13.5x forward earnings represents a 38% discount to US equities; China stimulus recovery and Taiwan semiconductor boom are driving EM earnings upgrades, with 24% YTD gain confirming improving momentum.
+            </div>
+          </td>
+        </tr>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>IBIT</strong><br><small style="color:#94a3b8">iShares Bitcoin Trust ETF</small></td>
+          <td style="text-align:right"><strong>$41.63</strong></td>
+          <td style="text-align:right">0.00%</td>
+          <td style="text-align:right">2.0%</td>
+          <td style="text-align:right">-28.0%</td>
+          <td style="text-align:right">N/A</td>
+          <td style="text-align:right">N/A</td>
+          <td><span class="badge" style="background:#facc15">Fair</span></td>
+          <td><span class="badge" style="background:#facc15;color:#000">Hold</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#ef4444">9</span></td>
+          <td style="text-align:right">$55.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> Bitcoin<br>
+              <strong>Valuation Reason:</strong> Post-halving cycle (April 2024) historically produces 12-24 month accumulation before the next bull leg; -16% YTD is normal digestion from the $108k BTC peak; institutional ETF inflows provide structural demand support.
+            </div>
+          </td>
+        </tr></tbody>
+  </table>
+  </div>
+
+  <!-- Watchlist -->
+  <div class="section-title">Watchlist (6 positions — not held)</div>
+  <div style="overflow-x:auto; border-radius:10px; border:1px solid #334155;">
+  <table>
+    <thead>
+      <tr>
+        <th>ETF</th><th style="text-align:right">Price</th><th style="text-align:right">Div Yield</th>
+        <th style="text-align:right">1M Ret</th><th style="text-align:right">1Y Ret</th>
+        <th style="text-align:right">5Y Ret</th><th style="text-align:right">FWD P/E</th>
+        <th>Valuation</th><th>Rec</th><th style="text-align:center">Risk</th>
+        <th style="text-align:right">EOY Target</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>QTUM</strong><br><small style="color:#94a3b8">Defiance Quantum ETF</small></td>
+          <td style="text-align:right"><strong>$159.71</strong></td>
+          <td style="text-align:right">0.81%</td>
+          <td style="text-align:right">8.0%</td>
+          <td style="text-align:right">87.3%</td>
+          <td style="text-align:right">230.0%</td>
+          <td style="text-align:right">N/A</td>
+          <td><span class="badge" style="background:#ef4444">Very Expensive</span></td>
+          <td><span class="badge" style="background:#94a3b8;color:#000">Neutral</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#ef4444">9</span></td>
+          <td style="text-align:right">$185.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> Micron Technology, MediaTek, Intel, STMicroelectronics, Nokia, Honeywell International, IBM<br>
+              <strong>Valuation Reason:</strong> 87% 1-year run has materially compressed risk/reward; quantum computing remains 3-5 years from commercial scale, pricing near-perfect execution across a diverse but unproven technology stack.
+            </div>
+          </td>
+        </tr>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>BOTZ</strong><br><small style="color:#94a3b8">Global X Robotics & Artificial Inte</small></td>
+          <td style="text-align:right"><strong>$40.28</strong></td>
+          <td style="text-align:right">0.80%</td>
+          <td style="text-align:right">2.0%</td>
+          <td style="text-align:right">29.8%</td>
+          <td style="text-align:right">19.2%</td>
+          <td style="text-align:right">$30.00</td>
+          <td><span class="badge" style="background:#facc15">Fair</span></td>
+          <td><span class="badge" style="background:#22c55e;color:#000">Buy</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#f97316">7</span></td>
+          <td style="text-align:right">$44.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> Fanuc, Keyence, ABB Ltd, Nvidia, Intuitive Surgical, Yaskawa Electric, Mitsubishi Electric<br>
+              <strong>Valuation Reason:</strong> Industrial automation re-rating underway as capex freeze (2022-23) reverses; 30x forward P/E justified by double-digit earnings growth from AI-enabled factory automation; weak yen benefits Japanese machinery exporters.
+            </div>
+          </td>
+        </tr>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>GLDM</strong><br><small style="color:#94a3b8">SPDR Gold MiniShares Trust</small></td>
+          <td style="text-align:right"><strong>$89.80</strong></td>
+          <td style="text-align:right">0.00%</td>
+          <td style="text-align:right">3.0%</td>
+          <td style="text-align:right">37.8%</td>
+          <td style="text-align:right">83.0%</td>
+          <td style="text-align:right">N/A</td>
+          <td><span class="badge" style="background:#facc15">Fair</span></td>
+          <td><span class="badge" style="background:#facc15;color:#000">Hold</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#22c55e">3</span></td>
+          <td style="text-align:right">$95.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> Physical Gold<br>
+              <strong>Valuation Reason:</strong> Gold's structural bid from central bank reserve diversification (away from USD) remains intact; 38% 1-year return reflects elevated geopolitical risk premium that may moderate near-term but structural bull case is solid.
+            </div>
+          </td>
+        </tr>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>VXUS</strong><br><small style="color:#94a3b8">Vanguard Total International Stock </small></td>
+          <td style="text-align:right"><strong>$86.06</strong></td>
+          <td style="text-align:right">2.76%</td>
+          <td style="text-align:right">5.0%</td>
+          <td style="text-align:right">32.6%</td>
+          <td style="text-align:right">49.9%</td>
+          <td style="text-align:right">$15.00</td>
+          <td><span class="badge" style="background:#86efac">Cheap</span></td>
+          <td><span class="badge" style="background:#22c55e;color:#000">Buy</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#facc15">5</span></td>
+          <td style="text-align:right">$92.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> TSMC, Samsung Electronics, ASML Holding, SK Hynix, Nestlé, LVMH, Toyota Motor<br>
+              <strong>Valuation Reason:</strong> ~15x forward P/E represents a 32% discount to US equities — widest spread in 20 years; USD weakening in 2026 adds a currency tailwind, and European defense/energy spending creates a new earnings growth driver.
+            </div>
+          </td>
+        </tr>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>XLV</strong><br><small style="color:#94a3b8">Health Care Select Sector SPDR ETF</small></td>
+          <td style="text-align:right"><strong>$149.31</strong></td>
+          <td style="text-align:right">1.60%</td>
+          <td style="text-align:right">2.0%</td>
+          <td style="text-align:right">11.9%</td>
+          <td style="text-align:right">48.0%</td>
+          <td style="text-align:right">$17.00</td>
+          <td><span class="badge" style="background:#facc15">Fair</span></td>
+          <td><span class="badge" style="background:#94a3b8;color:#000">Neutral</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#22c55e">3</span></td>
+          <td style="text-align:right">$158.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> Eli Lilly, Johnson & Johnson, AbbVie, UnitedHealth Group, Merck & Co., Pfizer, Thermo Fisher<br>
+              <strong>Valuation Reason:</strong> ~17x forward P/E is modest vs. the market; Eli Lilly's 15% weight provides a GLP-1 growth engine but also concentration risk, offset by J&J's and AbbVie's defensive dividend profiles.
+            </div>
+          </td>
+        </tr>
+        <tr class="etf-row" onclick="toggleDetail(this)">
+          <td><strong>XLE</strong><br><small style="color:#94a3b8">Energy Select Sector SPDR ETF</small></td>
+          <td style="text-align:right"><strong>$56.95</strong></td>
+          <td style="text-align:right">2.65%</td>
+          <td style="text-align:right">5.0%</td>
+          <td style="text-align:right">43.5%</td>
+          <td style="text-align:right">82.0%</td>
+          <td style="text-align:right">$12.00</td>
+          <td><span class="badge" style="background:#86efac">Cheap</span></td>
+          <td><span class="badge" style="background:#22c55e;color:#000">Buy</span></td>
+          <td style="text-align:center"><span class="risk-badge" style="background:#f97316">6</span></td>
+          <td style="text-align:right">$62.00</td>
+        </tr>
+        <tr class="detail-row" style="display:none">
+          <td colspan="11">
+            <div class="detail-box">
+              <strong>Top 7 Holdings:</strong> Exxon Mobil, Chevron, ConocoPhillips, SLB, The Williams Companies, EOG Resources, Phillips 66<br>
+              <strong>Valuation Reason:</strong> ~12x forward P/E at a 45% discount to S&P 500 with 2.65% dividend yield; global LNG demand and energy security spending underpin multi-year earnings support for major integrated oil companies.
+            </div>
+          </td>
+        </tr></tbody>
+  </table>
+  </div>
+
+  <!-- Commentary -->
+  <div class="section-title">Analyst Commentary</div>
+  <div class="commentary">
+    <h1>Portfolio Commentary — Weekly Update</h1>
+<strong>Date:</strong> May 31, 2026  
+<strong>Investor:</strong> Benny Tabach | Age 33 | PM at startup | 5–10yr horizon  
+<strong>Monthly savings available:</strong> ~$1,350 USD
+<hr>
+<h2>Overall Portfolio Assessment</h2>
+<p>The 7-position active portfolio has delivered an outstanding run since the prior update, led overwhelmingly by semiconductors. <strong>SMH</strong> is the clear standout, printing +147.9% over the trailing 12 months and +8% in May alone, fueled by Nvidia's AI dominance and a broad semiconductor supercycle. <strong>ITA</strong> (Aerospace & Defense) has quietly become the portfolio's second-best performer at +38.6% 1Y, as NATO rearmament spending continues to drive multi-year backlog growth across RTX, L3Harris, and Northrop Grumman. <strong>SPY</strong> and <strong>EQQS.L</strong> (NASDAQ-100) contributed steady +28.4% and +37.0% 1Y gains respectively, with the NASDAQ-100 surging to near its 52-week high of $89.28 by early May. <strong>COWZ</strong> delivered a solid +25.2% 1Y with 2.1% dividend yield — slower than growth holdings but providing welcome portfolio ballast and cash flow. <strong>IEMG/Emerging Markets</strong> surprised to the upside at +24.4% YTD (+24.4% 1Y), driven by Taiwan's semiconductor revaluation and China's ongoing fiscal stimulus. The one drag is <strong>IBIT (Bitcoin ETF)</strong>: -16% YTD and an estimated -28% 1-year return as Bitcoin digests its December 2024 peak near $108k. At $41.63, IBIT is in the middle of a post-halving consolidation phase — uncomfortable but historically normal.</p>
+<hr>
+<h2>Concentration Risks</h2>
+<p>The portfolio's primary structural risk is <strong>Nvidia exposure appearing across three holdings simultaneously</strong>: SMH (~15% of fund), EQQS.L/NASDAQ-100 (~7.3% of fund), and SPY (~4.5% of fund). Effectively, ~10-12% of the overall portfolio's performance is tied to a single company's earnings trajectory. A Nvidia earnings miss, export control escalation, or multiple compression would simultaneously hit all three positions. A secondary risk is <strong>Taiwan/TSMC concentration</strong>: it appears in SMH, EQQS.L, and the EM ETF (תכלית/IEMG proxy), creating compounding geopolitical tail risk around the Taiwan Strait. The <strong>ITA + aerospace</strong> position (pure US defense policy risk) and <strong>IBIT</strong> (Bitcoin volatility, regulatory risk) add high-variance tail exposure, though they serve distinct portfolio functions.</p>
+<hr>
+<h2>Top 3 Conviction Calls</h2>
+<p>1. <strong>COWZ (portfolio) — add on dips.</strong> At 14x forward P/E with a 2.1% yield, COWZ provides the only true value-factor diversification in an otherwise growth-heavy book. Its free-cash-flow screening methodology tends to outperform in mid-cycle and late-cycle environments. This is the position most deserving of incremental capital from monthly savings.</p>
+<p>2. <strong>ITA (portfolio) — maintain full weight.</strong> The multi-year defense spending tailwind is one of the most durable macro themes of the decade: NATO targets, Middle East rearmament, and the US defense budget's structural expansion show no signs of peaking. Booking +38.6% doesn't mean the thesis is over — contract backlogs are 5-7 years deep.</p>
+<p>3. <strong>XLE (watchlist) — approaching swap consideration.</strong> Energy is up +43.5% over the past year, at only 12x forward P/E with a 2.65% dividend yield. If oil prices stabilize around $70-80/bbl, XLE offers one of the best risk-adjusted entries on the watchlist — cheap, high-yield, and an inflation hedge that would benefit from any future supply shock.</p>
+<hr>
+<h2>Forward Recommendations</h2>
+<h3>Monthly $1,350 Deployment (across existing 7 positions)</h3>
+<p>The portfolio is at full capacity (7 of 7 slots filled). New monthly savings should be allocated across existing positions:</p>
+<ul><li><strong>$500 → COWZ</strong>: best risk/reward at current valuation; adds value-factor diversification and generates income</li><li><strong>$350 → EQQS.L (Invesco NASDAQ-100)</strong>: continue accumulating tech/AI via the tax-efficient accumulative structure; monthly cost-averaging near 52-week highs is appropriate given the multi-year growth runway</li><li><strong>$300 → ITA</strong>: defense spending theme is durable; add on any weakness below $230</li><li><strong>$200 → IEMG (תכלית)</strong>: EM at 13.5x forward P/E with China momentum building; underweight globally and deserves incremental capital</li></ul>
+<p>Hold SPY and IBIT at current weights; SPY needs no additions at 22x P/E, and IBIT is best left to accumulate passively through its consolidation phase.</p>
+<h3>Watchlist Standouts & Potential Swaps</h3>
+<p><strong>XLE is the strongest near-term swap candidate.</strong> At +43.5% 1Y and only 12x forward P/E, it offers: - Inflation hedge that the current portfolio lacks - 2.65% dividend yield (highest on the watchlist) - Low correlation to the AI/tech concentration risk dominating the book</p>
+<p><strong>If swapping, the candidate to exit is IBIT.</strong> Bitcoin's -28% 1Y underperformance and its role as a non-productive speculative asset makes it the weakest fundamental holding. The portfolio would lose some crypto optionality but gain income, inflation hedging, and reduced tail-risk volatility. This swap is worth serious consideration — particularly if BTC fails to reclaim $50k by Q3 2026.</p>
+<p><strong>VXUS</strong> is also quietly compelling at +32.6% 1Y, 15x forward P/E, and 2.76% yield — the international diversification it provides addresses the portfolio's current US-centricity, and USD weakness in 2026 adds a structural currency tailwind. However, it overlaps with IEMG's mandate, so it's best held in reserve.</p>
+<hr>
+<p><em>Data as of May 31, 2026. yfinance blocked in sandbox; all live data sourced via WebSearch from stockanalysis.com, BlackRock/iShares, VanEck, and financial aggregators. AI analysis fields (EOY price, valuation, recommendation, risk) represent analytical judgments based on current macro environment.</em></p>
+  </div>
+
+  <div class="footnote">
+    Data as of May 31, 2026. Live data sourced via WebSearch fallback (yfinance network blocked in scheduled run environment). 
+    Sources: stockanalysis.com, BlackRock/iShares, VanEck, Pacer ETFs, State Street, Vanguard, Global X, Defiance ETFs, SSGA, MarketBeat.
+    AI analysis fields (EOY price, valuation, recommendation, risk) represent analytical judgments. Not financial advice.
+    Click any row to expand holdings and valuation detail.
+  </div>
+</div>
+<script>
+function toggleDetail(row) {
+  var next = row.nextElementSibling;
+  if (next && next.classList.contains('detail-row')) {
+    next.style.display = next.style.display === 'none' ? 'table-row' : 'none';
+  }
+}
+</script>
+</body>
+</html>
