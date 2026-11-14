@@ -1,131 +1,101 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
 <title>Portfolio Dashboard</title><style>
-:root{--bg:#f6f7f9;--card:#fff;--ink:#16181d;--mute:#5f6673;--line:#e3e6eb;--acc:#2f5bd3;--g:#167a45;--gb:#e3f4ea;--a:#8a5a00;--ab:#fbf1dc;--r:#a8261d;--rb:#fbe6e4}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#181b21;--ink:#e8eaee;--mute:#9aa1ad;--line:#2a2e36;--acc:#7c9cff;--g:#5fd394;--gb:#16301f;--a:#f0c060;--ab:#3a2e12;--r:#ff8a80;--rb:#3b1a18}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:1180px;margin:0 auto;padding:28px 16px 60px}h1{margin:0;font-size:26px}.sub{color:var(--mute);margin:4px 0 20px}
-h2{font-size:18px;margin:34px 0 12px}h3{font-size:15px;margin:18px 0 6px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
-.top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.tk{font-weight:700;font-size:16px}.sec{color:var(--mute);font-size:12.5px}
-.pill{font-size:12px;font-weight:600;padding:3px 9px;border-radius:99px;white-space:nowrap}.sb,.b{background:var(--gb);color:var(--g)}.n,.h{background:var(--ab);color:var(--a)}.s{background:var(--rb);color:var(--r)}
-.px{font-size:24px;font-weight:700;margin:10px 0 8px}.px span{display:block;font-size:12.5px;font-weight:500;color:var(--mute)}
-.kv{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;font-size:13px}.kv b{display:block;font-size:11px;color:var(--mute);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
-.why{font-size:13px;margin:10px 0 8px}.hold{font-size:12px;color:var(--mute);border-top:1px solid var(--line);padding-top:8px}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 20px 16px}
-.note{background:var(--ab);color:var(--ink);border-radius:8px;padding:10px 12px;font-size:13px;margin:14px 0}
-.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:13px}
-th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{color:var(--mute);font-weight:600}
-table.alloc{width:auto;margin:6px 0}.foot{color:var(--mute);font-size:12px;margin-top:24px}
-</style></head><body><div class="wrap">
-<h1>Portfolio Dashboard</h1><div class="sub">Weekly update · 7 Nov 2026 · 7 active positions · 6 on watchlist</div>
-<div class="note"><strong>About the data:</strong> Yahoo Finance couldn't be reached, so prices come from web search (mostly Nov 6 closes; EQQS is a Sep 25 quote). *Yields, Fwd P/E and most holdings are carried over from the 11 Apr 2026 file.</div>
-<h2>Active portfolio</h2><div class="grid"><div class="card"><div class="top"><div><div class="tk" dir="auto">SPY</div>
-<div class="sec">Broad Market (US)</div></div><span class="pill b">Buy</span></div>
-<div class="px">$738.36<span>EOY target $752.00</span></div>
-<div class="kv"><div><b>Valuation</b>Expensive</div><div><b>Risk</b>4/10</div>
-<div><b>Fwd P/E*</b>$21.19</div><div><b>Fee</b>0.03%</div></div>
-<p class="why">Pulled back ~5.5% from the Oct 6 high of $781.62 after the post-midterm sell-off; last-recorded forward P/E near 21x is still well above the ~17x long-run average, so this is a dollar-cost-averaging entry rather than a bargain.</p>
-<div class="hold">Apple, Microsoft, Nvidia, Amazon, Meta, Alphabet, Berkshire</div></div><div class="card"><div class="top"><div><div class="tk" dir="auto">NASDAQ-100 Swap</div>
-<div class="sec">Technology/Growth</div></div><span class="pill h">Hold</span></div>
-<div class="px">$95.82<span>EOY target $98.00</span></div>
-<div class="kv"><div><b>Valuation</b>Expensive</div><div><b>Risk</b>6/10</div>
-<div><b>Fwd P/E*</b>$26.00</div><div><b>Fee</b>0.15%</div></div>
-<p class="why">Price is the latest dated LSE quote (Sep 25, 2026); the Nasdaq-100 has since swung sharply on rate-hike bets and AI-slowdown headlines. A ~26x forward multiple leaves little room for an earnings or rates disappointment.</p>
-<div class="hold">Apple, Microsoft, Nvidia, Amazon, Meta, Broadcom, Alphabet</div></div><div class="card"><div class="top"><div><div class="tk" dir="auto">COWZ</div>
-<div class="sec">Value/Large Cap</div></div><span class="pill b">Buy</span></div>
-<div class="px">$69.45<span>EOY target $71.00</span></div>
-<div class="kv"><div><b>Valuation</b>Fair</div><div><b>Risk</b>4/10</div>
-<div><b>Fwd P/E*</b>$15.17</div><div><b>Fee</b>0.06%</div></div>
-<p class="why">Up ~12% since April while growth sold off; a mid-teens P/E and high free-cash-flow screen make it the portfolio&#x27;s main hedge if rate-hike expectations keep pressuring long-duration tech.</p>
-<div class="hold">Newmont, ExxonMobil, Chevron, Gilead Sciences, ConocoPhillips, Merck, Comcast</div></div><div class="card"><div class="top"><div><div class="tk" dir="auto">SMH</div>
-<div class="sec">Semiconductors</div></div><span class="pill b">Buy</span></div>
-<div class="px">$462.38<span>EOY target $500.00</span></div>
-<div class="kv"><div><b>Valuation</b>Fair</div><div><b>Risk</b>8/10</div>
-<div><b>Fwd P/E*</b>$21.86</div><div><b>Fee</b>0.35%</div></div>
-<p class="why">Down ~31% from its 52-week high of $671.83 after a ~$2T chip sell-off driven by rate-hike bets, tariff threats and AI-slowdown calls; the de-rating has removed much of the premium, but Nvidia (~21%) and TSMC (~10%) still dominate.</p>
-<div class="hold">Nvidia, TSMC, Broadcom, Texas Instruments, AMD, Micron, Analog Devices</div></div><div class="card"><div class="top"><div><div class="tk" dir="auto">ITA</div>
-<div class="sec">Aerospace &amp; Defense</div></div><span class="pill h">Hold</span></div>
-<div class="px">$68.98<span>EOY target $72.00</span></div>
-<div class="kv"><div><b>Valuation</b>Expensive</div><div><b>Risk</b>5/10</div>
-<div><b>Fwd P/E*</b>$38.94</div><div><b>Fee</b>0.38%</div></div>
-<p class="why">Price reflects the 3-for-1 split effective Nov 5, 2026 (pre-split ~$207); split-adjusted it is ~10% below April. A high-30s P/E still prices in a lot of the defence-spending cycle.</p>
-<div class="hold">RTX, Lockheed, GE Aerospace, Northrop, Boeing, TransDigm</div></div><div class="card"><div class="top"><div><div class="tk" dir="auto">Tachlit MSCI EM</div>
-<div class="sec">Emerging Markets</div></div><span class="pill b">Buy</span></div>
-<div class="px">$74.40<span>EOY target $77.00</span></div>
-<div class="kv"><div><b>Valuation</b>Cheap</div><div><b>Risk</b>6/10</div>
-<div><b>Fwd P/E*</b>$13.50</div><div><b>Fee</b>0.55%</div></div>
-<p class="why">IEMG proxy (Nov 2 quote) is flat since April and ~14% below its 52-week high; a ~13–14x forward P/E is a deep discount to the US, though TSMC/Samsung/SK Hynix tie it to the same chip cycle as SMH.</p>
-<div class="hold">TSMC, Tencent, Alibaba, Samsung, SK Hynix, Meituan, Reliance Inds</div></div><div class="card"><div class="top"><div><div class="tk" dir="auto">IBIT</div>
-<div class="sec">Digital Assets</div></div><span class="pill h">Hold</span></div>
-<div class="px">$42.88<span>EOY target $46.00</span></div>
-<div class="kv"><div><b>Valuation</b>Bubbly</div><div><b>Risk</b>9/10</div>
-<div><b>Fwd P/E*</b>N/A</div><div><b>Fee</b>0.25%</div></div>
-<p class="why">Bitcoin ~$75.5K after a ~6% drop on Nov 6 amid $430M of spot-ETF outflows; no cash flows to anchor value, so keep at the 5% target and don&#x27;t chase or panic-sell.</p>
-<div class="hold">Bitcoin</div></div></div>
-<h2>Analyst note</h2><div class="panel"><div class="note"><strong>About the data:</strong> Yahoo Finance couldn&#x27;t be reached this run, so prices come from web search (mostly Nov 6 closes). EQQS is a Sep 25 quote, IEMG is from Nov 2, BOTZ from Nov 3, VXUS from Nov 4 and XLV from Nov 5. Yields, FWD P/E and most holdings are carried over from the April 11 file. The &quot;since April&quot; moves below compare against that file.</div>
-<h3>Overall assessment</h3>
-<p>It was a rough week. The post-midterm sell-off, a payrolls beat that revived rate-hike bets, and AI-slowdown headlines hit the growth side of the book hardest. <strong>SMH ($462)</strong> is now ~31% below its 52-week high, though it is still about 6% above April. <strong>SPY ($738)</strong> is ~5.5% off its October record. <strong>COWZ (+12% since April)</strong> is the best performer among the core holdings and is doing its job as the value hedge. <strong>ITA</strong> completed a 3-for-1 split on Nov 5. At $68.98 it is ~10% below April on a split-adjusted basis. <strong>IBIT</strong> is roughly flat since April, but Bitcoin fell ~6% on Nov 6 alongside heavy ETF outflows. The <strong>EM sleeve</strong> (IEMG proxy) has barely moved.</p>
-<h3>Concentration risk</h3>
-<p>Nvidia is the main single-name risk: it sits in SPY (~7%), the NASDAQ-100 (~9%) and SMH (~21%). TSMC appears in both SMH and the EM fund. Together, the 25% NASDAQ-100 and 15% SMH targets mean about 40% of the index sleeve moves with AI capex and interest rates. This week showed how sharply those holdings fall together.</p>
-<h3>Top 3 conviction calls</h3>
-<ol>
-<li><strong>SMH — Buy on weakness.</strong> The 31% drawdown has removed much of the premium, and the long-run AI compute demand case still holds. Build the position gradually through monthly deposits, not in one go.</li>
-<li><strong>COWZ — Buy.</strong> It is cheap, generates real cash flow, and benefits if rates stay higher.</li>
-<li><strong>GLDM (watchlist) — Buy candidate.</strong> Gold is ~25% below its high, central-bank buying is at a 2026 high, and it has low correlation to the AI trade.</li>
-</ol>
-<h3>Forward recommendations</h3>
-<p><strong>Rebalancing:</strong> No forced trades. In keeping with the tax-minimising approach, rebalance through new deposits rather than by selling.</p>
-<p><strong>Monthly $1,350:</strong></p>
-<table class="alloc">
-<tr><th>ETF</th><th>Amount</th></tr>
-<tr><td>SPY</td><td>$300</td></tr>
-<tr><td>NASDAQ-100 Swap</td><td>$300</td></tr>
-<tr><td>SMH</td><td>$250</td></tr>
-<tr><td>Tachlit EM</td><td>$200</td></tr>
-<tr><td>COWZ</td><td>$200</td></tr>
-<tr><td>ITA</td><td>$50</td></tr>
-<tr><td>IBIT</td><td>$50</td></tr>
-</table>
-<p>This leans toward the holdings that sold off and keeps the expensive ITA and the volatile IBIT light.</p>
-<p><strong>Watchlist:</strong> <strong>GLDM</strong> is the only fund close to justifying a swap. If Bitcoin keeps falling with tech, replacing <strong>IBIT → GLDM</strong> would keep the 5% &quot;alternative&quot; slot while adding a real diversifier. It is not urgent yet, so review it next week. VXUS is cheap, but it overlaps with the EM sleeve and you have chosen not to add developed ex-US exposure. XLV has already rallied ~25%. QTUM and BOTZ add Nvidia overlap without adding enough return. XLE: no.</p>
-<p><em>This is not financial advice. Check prices with your broker before trading.</em></p></div>
-<h2>Watchlist</h2><div class="grid"><div class="card"><div class="top"><div><div class="tk" dir="auto">QTUM</div>
-<div class="sec">Advanced Technology: Quantum computing</div></div><span class="pill h">Hold</span></div>
-<div class="px">$123.37<span>EOY target $128.00</span></div>
-<div class="kv"><div><b>Valuation</b>Very Expensive</div><div><b>Risk</b>9/10</div>
-<div><b>Fwd P/E*</b>$39.09</div><div><b>Fee</b>0.40%</div></div>
-<p class="why">Closed $123.37 on Nov 6, ~27% below its $170 52-week high; still a high-multiple basket whose returns come mostly from AI-adjacent megacaps rather than quantum revenue.</p>
-<div class="hold">Micron, IonQ, IBM, Rigetti, Nvidia, AMD, Alphabet</div></div><div class="card"><div class="top"><div><div class="tk" dir="auto">BOTZ</div>
-<div class="sec">Robotics &amp; AI</div></div><span class="pill n">Neutral</span></div>
-<div class="px">$32.32<span>EOY target $33.00</span></div>
-<div class="kv"><div><b>Valuation</b>Expensive</div><div><b>Risk</b>7/10</div>
-<div><b>Fwd P/E*</b>$35.00</div><div><b>Fee</b>0.68%</div></div>
-<p class="why">Nov 3 quote of $32.32 sits near the bottom of its 52-week range (~$31.9–$41.7); multiples around 35x are not supported by its lagging returns versus SMH.</p>
-<div class="hold">Nvidia, Intuitive Surgical, ABB, Keyence, Fanuc, Teradyne</div></div><div class="card"><div class="top"><div><div class="tk" dir="auto">GLDM</div>
-<div class="sec">Commodities (Gold)</div></div><span class="pill b">Buy</span></div>
-<div class="px">$80.40<span>EOY target $83.00</span></div>
-<div class="kv"><div><b>Valuation</b>Fair</div><div><b>Risk</b>3/10</div>
-<div><b>Fwd P/E*</b>N/A</div><div><b>Fee</b>0.10%</div></div>
-<p class="why">Gold ~$4,050/oz, roughly 25% below its all-time high, as a strong jobs report lifted the dollar; central-bank buying at a 2026 high supports the structural case.</p>
-<div class="hold">Physical gold</div></div><div class="card"><div class="top"><div><div class="tk" dir="auto">VXUS</div>
-<div class="sec">Global (ex-US)</div></div><span class="pill b">Buy</span></div>
-<div class="px">$83.88<span>EOY target $86.00</span></div>
-<div class="kv"><div><b>Valuation</b>Cheap</div><div><b>Risk</b>5/10</div>
-<div><b>Fwd P/E*</b>$16.91</div><div><b>Fee</b>0.07%</div></div>
-<p class="why">Nov 4 close of $83.88 (Vanguard); international equities still trade at a ~20% P/E discount to the US and have held up better than US tech in the latest sell-off.</p>
-<div class="hold">TSMC, ASML, Nestle, Samsung, Tencent, Novo, Toyota</div></div><div class="card"><div class="top"><div><div class="tk" dir="auto">XLV</div>
-<div class="sec">Health Care</div></div><span class="pill h">Hold</span></div>
-<div class="px">$184.91<span>EOY target $188.00</span></div>
-<div class="kv"><div><b>Valuation</b>Fair</div><div><b>Risk</b>3/10</div>
-<div><b>Fwd P/E*</b>$22.50</div><div><b>Fee</b>0.12%</div></div>
-<p class="why">Up ~25% since April (Nov 5 close $184.91) as investors rotated into defensives; the multiple is now at the top of its historical range, which limits upside from here.</p>
-<div class="hold">Eli Lilly, UnitedHealth, J&amp;J, Merck, AbbVie, Pfizer, Thermo</div></div><div class="card"><div class="top"><div><div class="tk" dir="auto">XLE</div>
-<div class="sec">Energy</div></div><span class="pill h">Hold</span></div>
-<div class="px">$61.62<span>EOY target $63.00</span></div>
-<div class="kv"><div><b>Valuation</b>Fair</div><div><b>Risk</b>6/10</div>
-<div><b>Fwd P/E*</b>$21.57</div><div><b>Fee</b>0.10%</div></div>
-<p class="why">Closed $61.62 on Nov 6, ~12% off its late-October 52-week high of $70.15; dividend income supports it but oil momentum has faded.</p>
-<div class="hold">ExxonMobil, Chevron, ConocoPhillips, EOG, SLB, Marathon</div></div></div>
-<h2>All data</h2><div class="tw"><table><tr><th>Ticker</th><th>In portfolio</th><th>Current Price (USD)</th><th>End Of Year Expected Price</th><th>Dividend Yield</th><th>Yield 1 Month</th><th>Yield 1 Year</th><th>Yield 5 Year</th><th>FWD P/E</th><th>Stock Valuation</th><th>Recommendation</th><th>Risk (1-10)</th></tr><tr><td dir="auto">SPY</td><td dir="auto">Yes</td><td dir="auto">$738.36</td><td dir="auto">$752.00</td><td dir="auto">1.06%</td><td dir="auto">0.5%</td><td dir="auto">31.0%</td><td dir="auto">76.7%</td><td dir="auto">$21.19</td><td dir="auto">Expensive</td><td dir="auto">Buy</td><td dir="auto">4</td></tr><tr><td dir="auto">Invesco NASDAQ-100 Swap UCITS ETF Acc</td><td dir="auto">Yes</td><td dir="auto">$95.82</td><td dir="auto">$98.00</td><td dir="auto">0.00%</td><td dir="auto">-1.0%</td><td dir="auto">27.5%</td><td dir="auto">110.0%</td><td dir="auto">$26.00</td><td dir="auto">Expensive</td><td dir="auto">Hold</td><td dir="auto">6</td></tr><tr><td dir="auto">COWZ</td><td dir="auto">Yes</td><td dir="auto">$69.45</td><td dir="auto">$71.00</td><td dir="auto">1.29%</td><td dir="auto">2.0%</td><td dir="auto">12.3%</td><td dir="auto">94.6%</td><td dir="auto">$15.17</td><td dir="auto">Fair</td><td dir="auto">Buy</td><td dir="auto">4</td></tr><tr><td dir="auto">SMH</td><td dir="auto">Yes</td><td dir="auto">$462.38</td><td dir="auto">$500.00</td><td dir="auto">0.26%</td><td dir="auto">-4.0%</td><td dir="auto">123.4%</td><td dir="auto">255.8%</td><td dir="auto">$21.86</td><td dir="auto">Fair</td><td dir="auto">Buy</td><td dir="auto">8</td></tr><tr><td dir="auto">ITA</td><td dir="auto">Yes</td><td dir="auto">$68.98</td><td dir="auto">$72.00</td><td dir="auto">1.29%</td><td dir="auto">5.0%</td><td dir="auto">62.5%</td><td dir="auto">159.6%</td><td dir="auto">$38.94</td><td dir="auto">Expensive</td><td dir="auto">Hold</td><td dir="auto">5</td></tr><tr><td dir="auto">תכלית סל ‏‏‏MSCI Emerging Markets</td><td dir="auto">Yes</td><td dir="auto">$74.40</td><td dir="auto">$77.00</td><td dir="auto">2.49%</td><td dir="auto">3.0%</td><td dir="auto">38.0%</td><td dir="auto">20.5%</td><td dir="auto">$13.50</td><td dir="auto">Cheap</td><td dir="auto">Buy</td><td dir="auto">6</td></tr><tr><td dir="auto">IBIT</td><td dir="auto">Yes</td><td dir="auto">$42.88</td><td dir="auto">$46.00</td><td dir="auto">0.00%</td><td dir="auto">-8.0%</td><td dir="auto">-11.5%</td><td dir="auto">N/A</td><td dir="auto">N/A</td><td dir="auto">Bubbly</td><td dir="auto">Hold</td><td dir="auto">9</td></tr><tr><td dir="auto">QTUM</td><td dir="auto">No</td><td dir="auto">$123.37</td><td dir="auto">$128.00</td><td dir="auto">0.81%</td><td dir="auto">2.0%</td><td dir="auto">95.0%</td><td dir="auto">143.0%</td><td dir="auto">$39.09</td><td dir="auto">Very Expensive</td><td dir="auto">Hold</td><td dir="auto">9</td></tr><tr><td dir="auto">BOTZ</td><td dir="auto">No</td><td dir="auto">$32.32</td><td dir="auto">$33.00</td><td dir="auto">0.73%</td><td dir="auto">2.0%</td><td dir="auto">12.7%</td><td dir="auto">9.5%</td><td dir="auto">$35.00</td><td dir="auto">Expensive</td><td dir="auto">Neutral</td><td dir="auto">7</td></tr><tr><td dir="auto">GLDM</td><td dir="auto">No</td><td dir="auto">$80.40</td><td dir="auto">$83.00</td><td dir="auto">0.00%</td><td dir="auto">8.0%</td><td dir="auto">71.7%</td><td dir="auto">178.9%</td><td dir="auto">N/A</td><td dir="auto">Fair</td><td dir="auto">Buy</td><td dir="auto">3</td></tr><tr><td dir="auto">VXUS</td><td dir="auto">No</td><td dir="auto">$83.88</td><td dir="auto">$86.00</td><td dir="auto">2.82%</td><td dir="auto">4.0%</td><td dir="auto">36.3%</td><td dir="auto">48.0%</td><td dir="auto">$16.91</td><td dir="auto">Cheap</td><td dir="auto">Buy</td><td dir="auto">5</td></tr><tr><td dir="auto">XLV</td><td dir="auto">No</td><td dir="auto">$184.91</td><td dir="auto">$188.00</td><td dir="auto">1.55%</td><td dir="auto">-1.0%</td><td dir="auto">14.6%</td><td dir="auto">62.0%</td><td dir="auto">$22.50</td><td dir="auto">Fair</td><td dir="auto">Hold</td><td dir="auto">3</td></tr><tr><td dir="auto">XLE</td><td dir="auto">No</td><td dir="auto">$61.62</td><td dir="auto">$63.00</td><td dir="auto">2.69%</td><td dir="auto">6.0%</td><td dir="auto">56.8%</td><td dir="auto">90.0%</td><td dir="auto">$21.57</td><td dir="auto">Fair</td><td dir="auto">Hold</td><td dir="auto">6</td></tr></table></div>
-<div class="foot">Generated automatically. Not financial advice.</div></div></body></html>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#1c1c1a;--mut:#6b6b66;--line:#e5e4df;--acc:#2f5d50;--pos:#1f7a4d;--neg:#b23b3b}
+@media (prefers-color-scheme:dark){:root{--bg:#151614;--card:#1e201d;--ink:#ecebe6;--mut:#9a9a93;--line:#30322e;--acc:#7fb8a4;--pos:#5cc58f;--neg:#e07575}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+.w{max-width:1200px;margin:auto;padding:24px 16px}h1{margin:0;font-size:26px}.sub{color:var(--mut);margin:4px 0 20px}
+.k{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:24px}.k div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}.k b{display:block;font-size:20px}.k span{color:var(--mut);font-size:13px}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:20px}h2{margin:0 0 12px;font-size:18px;color:var(--acc)}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:900px}th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px}th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase}
+td.t small,td.reason small{display:block;color:var(--mut);font-size:12px}td.reason{max-width:340px}.pos{color:var(--pos)}.neg{color:var(--neg)}
+.pill{padding:2px 8px;border-radius:99px;font-size:12px;font-weight:600;background:var(--line)}.pill.sb,.pill.b{background:#d7eee2;color:#1f5e3d}.pill.h{background:#f4e8c8;color:#6b5210}.pill.s{background:#f5d5d5;color:#7a2222}
+.risk{width:60px;height:6px;background:var(--line);border-radius:3px;margin-bottom:2px}.risk i{display:block;height:100%;background:var(--acc);border-radius:3px}
+.note p,.note li{max-width:80ch}footer{color:var(--mut);font-size:12px}</style></head><body><div class=w>
+<h1>Portfolio Dashboard</h1><p class=sub>Weekly update · data as of 13 Nov 2026 close (some quotes 9–12 Nov) · generated 14 Nov 2026</p>
+<div class=k><div><span>Live positions</span><b>7 / 7</b></div><div><span>Watchlist</span><b>6</b></div>
+<div><span>SPY</span><b>$754.37</b></div><div><span>Monthly savings</span><b>$1,350</b></div></div>
+<section><h2>Live portfolio</h2><div class=tw><table><tr><th>ETF</th><th>Price</th><th>EOY target</th><th>1Y</th><th>Div</th><th>Fwd P/E</th><th>Valuation</th><th>Rec.</th><th>Risk</th><th>Why</th></tr><tr><td class=t><b>SPY</b><small>S&amp;P 500</small></td>
+<td>$754.37</td><td>$775.00</td>
+<td class="pos">11.3%</td><td>1.01%</td><td>$18.81</td>
+<td>Fair</td><td><span class="pill b">Buy</span></td>
+<td><div class=risk><i style="width:40%"></i></div>4</td>
+<td class=reason>Forward P/E of 18.8x is below the ~21x recorded previously after the November selloff; earnings growth intact, but Fed hike risk caps multiple expansion.<br><small>Top: Apple, NVIDIA, Microsoft, Amazon, Alphabet, Broadcom, Meta</small></td></tr><tr><td class=t><b>Invesco NASDAQ-100 Swap UCITS ETF Acc</b><small>Nasdaq 100</small></td>
+<td>$89.32</td><td>$92.00</td>
+<td class="pos">29.2%</td><td>0.00%</td><td>$32.80</td>
+<td>Expensive</td><td><span class="pill b">Buy</span></td>
+<td><div class=risk><i style="width:60%"></i></div>6</td>
+<td class=reason>Nasdaq-100 still trades at a premium to SPY and carries the heaviest Nvidia/mega-cap concentration; fundamentals not refreshed this run (EQQS price undated).<br><small>Top: Apple, Microsoft, Nvidia, Amazon,  Meta, Broadcom, Alphabet</small></td></tr><tr><td class=t><b>COWZ</b><small>Pacer US Cash Cows 100 Index</small></td>
+<td>$71.19</td><td>$72.50</td>
+<td class="pos">25.9%</td><td>1.91%</td><td>$12.28</td>
+<td>Cheap</td><td><span class="pill b">Buy</span></td>
+<td><div class=risk><i style="width:40%"></i></div>4</td>
+<td class=reason>12.3x forward P/E vs 18.8x for SPY with ~1.9% yield; free-cash-flow tilt gives low overlap with the AI trade.<br><small>Top: Accenture, Marathon Petroleum, Valero, Lockheed Martin, Altria, Chevron, ConocoPhillips</small></td></tr><tr><td class=t><b>SMH</b><small>MVIS US Listed Semiconductor 25 Index (MVSMHTR)</small></td>
+<td>$486.75</td><td>$520.00</td>
+<td class="pos">43.4%</td><td>0.22%</td><td>$15.72</td>
+<td>Fair</td><td><span class="pill b">Buy</span></td>
+<td><div class=risk><i style="width:80%"></i></div>8</td>
+<td class=reason>Forward P/E of 15.7x after a 28% drawdown from the June high is the cheapest in years, though beta of 1.8 and Nvidia governance risk remain.<br><small>Top: NVIDIA, TSMC, Broadcom, Texas Instruments, AMD, Analog Devices, ASML</small></td></tr><tr><td class=t><b>ITA</b><small>Dow Jones U.S. Select Aerospace &amp; Defense</small></td>
+<td>$71.25</td><td>$73.00</td>
+<td class="neg">-1.0%</td><td>0.27%</td><td>$27.11</td>
+<td>Expensive</td><td><span class="pill h">Hold</span></td>
+<td><div class=risk><i style="width:60%"></i></div>6</td>
+<td class=reason>27.1x forward P/E with roughly flat 1Y return; a Democratic Congress raises the risk of slower defense budget growth.<br><small>Top: GE Aerospace, RTX, Boeing, Lockheed Martin, TransDigm, Northrop Grumman, General Dynamics</small></td></tr><tr><td class=t><b>תכלית סל ‏‏‏MSCI Emerging Markets</b><small>MSCI Emerging Markets</small></td>
+<td>$73.72</td><td>$76.00</td>
+<td class="">—</td><td>2.32%</td><td>—</td>
+<td>Fair</td><td><span class="pill b">Buy</span></td>
+<td><div class=risk><i style="width:60%"></i></div>6</td>
+<td class=reason>~18x P/E (BlackRock, basis unspecified) and 2.3% yield; +11.7% YTD with TSMC overlap to SMH.<br><small>Top: </small></td></tr><tr><td class=t><b>IBIT</b><small>Bitcoin</small></td>
+<td>$38.94</td><td>$42.00</td>
+<td class="neg">-30.8%</td><td>0.00%</td><td>N/A</td>
+<td>Fair</td><td><span class="pill h">Hold</span></td>
+<td><div class=risk><i style="width:90%"></i></div>9</td>
+<td class=reason>Down ~31% over 1Y with persistent ETF outflows and bitcoin below $70k; no earnings anchor and a hawkish Fed weigh on it.<br><small>Top: Bitcoin</small></td></tr></table></div></section>
+<section><h2>Watchlist</h2><div class=tw><table><tr><th>ETF</th><th>Price</th><th>EOY target</th><th>1Y</th><th>Div</th><th>Fwd P/E</th><th>Valuation</th><th>Rec.</th><th>Risk</th><th>Why</th></tr><tr><td class=t><b>QTUM</b><small>מחשוב קוונטי</small></td>
+<td>$130.10</td><td>$135.00</td>
+<td class="pos">87.3%</td><td>1.54%</td><td>$42.80</td>
+<td>Bubbly</td><td><span class="pill h">Hold</span></td>
+<td><div class=risk><i style="width:90%"></i></div>9</td>
+<td class=reason>Price has more than doubled vs the last recorded level; valuation driven by speculative quantum enthusiasm rather than current earnings.<br><small>Top: Micron, IonQ, IBM, Rigetti,  Nvidia, AMD, Alphabet</small></td></tr><tr><td class=t><b>BOTZ</b><small>AI ורובוטיקה</small></td>
+<td>$31.88</td><td>$33.00</td>
+<td class="pos">35.1%</td><td>0.17%</td><td>$35.80</td>
+<td>Expensive</td><td><span class="pill n">Neutral</span></td>
+<td><div class=risk><i style="width:80%"></i></div>8</td>
+<td class=reason>Nvidia-heavy thematic basket; overlaps SMH and lacks a valuation discount after the chip selloff.<br><small>Top: Nvidia, Intuitive Surgical, ABB, Keyence, Fanuc, Teradyne</small></td></tr><tr><td class=t><b>GLDM</b><small>זהב פיזי</small></td>
+<td>$78.81</td><td>$80.00</td>
+<td class="pos">128.2%</td><td>0.00%</td><td>N/A</td>
+<td>Very Expensive</td><td><span class="pill h">Hold</span></td>
+<td><div class=risk><i style="width:50%"></i></div>5</td>
+<td class=reason>Gold near record highs (~$3,885/oz) while the Fed signals a December hike, limiting near-term upside.<br><small>Top: Physical gold</small></td></tr><tr><td class=t><b>VXUS</b><small>עולם (חוץ ארה&quot;ב)</small></td>
+<td>$82.64</td><td>$84.00</td>
+<td class="pos">8.9%</td><td>3.08%</td><td>$14.50</td>
+<td>Fair</td><td><span class="pill n">Neutral</span></td>
+<td><div class=risk><i style="width:50%"></i></div>5</td>
+<td class=reason>Ex-US markets trade at a discount to the US, but outside the investor&#x27;s chosen scope (no developed ex-US sleeve).<br><small>Top: TSMC, ASML, Nestle, Samsung,  Tencent, Novo, Toyota</small></td></tr><tr><td class=t><b>XLV</b><small>בריאות</small></td>
+<td>$188.95</td><td>$192.00</td>
+<td class="pos">30.4%</td><td>1.35%</td><td>$19.95</td>
+<td>Fair</td><td><span class="pill b">Buy</span></td>
+<td><div class=risk><i style="width:40%"></i></div>4</td>
+<td class=reason>~20x forward P/E, +30% 1Y and defensive vs tech; drug-pricing risk under the new Congress is the main overhang.<br><small>Top: Eli Lilly, Johnson &amp; Johnson, AbbVie, Merck, UnitedHealth, Thermo Fisher, Amgen</small></td></tr><tr><td class=t><b>XLE</b><small>אנרגיה</small></td>
+<td>$64.96</td><td>$66.00</td>
+<td class="pos">2.1%</td><td>3.35%</td><td>$11.20</td>
+<td>Cheap</td><td><span class="pill n">Neutral</span></td>
+<td><div class=risk><i style="width:60%"></i></div>6</td>
+<td class=reason>Low multiple and strong cash flow, but oil-price driven and outside the growth mandate.<br><small>Top: ExxonMobil, Chevron, ConocoPhillips,  EOG, SLB, Marathon</small></td></tr></table></div></section>
+<section class=note><h2>Weekly Portfolio Note — 14 Nov 2026</h2>
+<p><strong>Overall.</strong> A violent week. The Democratic midterm sweep triggered the S&amp;P 500&#x27;s largest one-day dollar loss on record (Nov 5), chips fell ~11% that day, and Nvidia was hit by a governance scandal around its CEO. The market then recovered — the S&amp;P logged its best week since August. SPY closed at $754.37, ~3.5% off its 52-week high. The key movers in the live book: <strong>SMH</strong> ($486.75) is 28% below its June high yet still +43% over 1Y; <strong>IBIT</strong> ($38.94) is −31% over 1Y with six straight days of ETF outflows and bitcoin under $70k; <strong>ITA</strong> (~$71.25) is flat-to-negative over 1Y as a Democratic Congress clouds the defense-spending outlook; <strong>COWZ</strong> ($71.19) sits near its 52-week high and is the steadiest holding.</p>
+<p><strong>Concentration risks.</strong> Nvidia is a top holding in SPY (6.1%), the Nasdaq-100 fund and SMH (18%), and Broadcom/TSMC repeat across SPY, Nasdaq-100, SMH and IEMG. With target weights of SPY 25% + Nasdaq-100 25% + SMH 15%, roughly two-thirds of the index sleeve rides the same AI/mega-cap factor. A second risk is rates: the Fed is signalling a December <em>hike</em>, which hurts long-duration growth, bitcoin and gold. Lockheed appears in both ITA and COWZ.</p>
+<p><strong>Top 3 conviction calls.</strong></p>
+<ul>
+<li><strong>SMH — Buy.</strong> Forward P/E of ~15.7x is the cheapest in years after the drawdown; earnings are still growing. Size carefully (beta 1.8).</li>
+<li><strong>COWZ — Buy.</strong> ~12.3x forward vs ~18.8x for SPY, with low overlap with the AI trade. It is the best diversifier in the book.</li>
+<li><strong>XLV (watchlist) — Buy candidate.</strong> ~20x forward, +30% 1Y, defensive and negatively correlated with tech. The risk is drug-pricing pressure from the new Congress.</li>
+</ul>
+<p><strong>Forward recommendations.</strong></p>
+<ul>
+<li><em>Rebalancing:</em> no forced sells. Capital gains tax makes trimming costly, and nothing is broken enough to justify an exit. Keep IBIT and ITA but pause new money into both.</li>
+<li><em>$1,350 this month:</em> SPY $350 · Nasdaq-100 $300 · SMH $250 · COWZ $250 · IEMG $200 · ITA $0 · IBIT $0. This leans into the discounted chips while COWZ and IEMG dilute the Nvidia concentration.</li>
+<li><em>Watchlist swap:</em> <strong>XLV is the only candidate close to a swap.</strong> If ITA closes below its 52-week low (~$65) or defense budgets are formally cut, exit <strong>ITA</strong> in favour of XLV. That would also remove the Lockheed overlap with COWZ. VXUS is off the table (no developed ex-US sleeve, per your preference). GLDM is near record highs and faces rate-hike headwinds. QTUM and BOTZ remain too speculative or too Nvidia-heavy to add.</li>
+</ul>
+<p><em>Data caveats:</em> Yahoo Finance was blocked by the network allowlist this run, so the data came from web search and stockanalysis.com. Some quotes are from 9–12 Nov rather than 13 Nov, and COWZ fundamentals are as of 23 Oct. No 1-month or 5-year return data was available. Not financial advice.</p></section>
+<footer>Sources: stockanalysis.com, Yahoo Finance, CNBC, Finviz, iShares, Vanguard, Google Finance via web search. Not financial advice.</footer>
+</div></body></html>
